@@ -1,0 +1,43 @@
+when coming to path parameter we need to pass every path , then only we can access our output 
+but if you use query parameter , that one doesn't need every path we only base path , after that we will pass query what are thinks we needed
+ex :
+from fastapi import FastAPI
+
+app=FastAPI()
+
+database={
+    "key1":"value1",
+    "key2":"value2",
+    "key3":"value3"
+          }
+
+
+@app.get("/sub/{sub_page}/{query}")
+async def subpage(sub_page:str,query:int):
+    return database.get(sub_page)
+
+when you access to output , we need write hole path like :http://127.0.0.1:8000/sub/key1/5  
+
+but if use query parameter we doesn't need write hold path and here we can able pass defaulf values also 
+but path parameter we can't access default thinks it doesn't support.
+
+ex :
+from fastapi import FastAPI
+
+app=FastAPI()
+
+database={
+    "key1":"value1",
+    "key2":"value2",
+    "key3":"value3"
+          }
+
+
+@app.get("/sub")
+async def subpage(sub_page:str="key1",query:int=5):
+    return database.get(sub_page)
+
+here if i doesn't give sub_page and query aslo ,it will work use of default value,
+but path _parameter doesn't work here we need pass sun_page ,query is in the path
+
+url like:http://127.0.0.1:8000/sub
