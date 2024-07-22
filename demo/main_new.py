@@ -9,3 +9,7 @@ def read_root(name):
 @app.post("/")
 def change():
     return "it is gokul"
+
+@app.post("/gokul")
+def change():
+    return "it is gokul"
