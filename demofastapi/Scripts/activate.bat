@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=A:\gokul\Mindfulai work\project\Fastapi\project_1\demofastapi
+set VIRTUAL_ENV=A:\gokul\Mindfulai work\project\Fastapi\Fapi_project_1\demofastapi
 
 if not defined PROMPT set PROMPT=$P$G
 
